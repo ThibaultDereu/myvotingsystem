@@ -1,0 +1,127 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.app-content {
+  max-width: 1000px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 80px 10px 10px;
+  background-color: #ffffff;
+}
+
+.app-navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.app-navbar * {
+  margin-right: 10px;
+}
+
+a,
+input,
+li,
+ol,
+p,
+ul {
+  line-height: 1.3rem;
+  font-weight: 400;
+  color: #444;
+  letter-spacing: 0.03rem;
+}
+
+.app-table {
+  margin: 10px 0px 10px 0px;
+  width: 100%;
+}
+
+.app-form-button.app-form-button.mat-button-base {
+  margin: 20px 10px 20px 10px;
+}
+
+.app-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.app-form-field {
+  width: 100%;
+}
+
+.app-h1 {
+  padding-top: 10px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-weight: 200;
+  color: #666;
+}
+
+.app-h2 {
+  font-weight: 200;
+  color: #666;
+}
+
+.app-dragdrop-list {
+  width: 500px;
+  max-width: 100%;
+  border: dashed 2px #ccc;
+  min-height: 60px;
+  display: block;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.app-dragdrop-box {
+  padding: 20px 10px;
+  border-bottom: dashed 2px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: move;
+  background: #eee;
+  font-size: 14px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.app-dragdrop-box:last-child {
+  border: none;
+}
+
+.app-dragdrop-list.cdk-drop-list-dragging
+  .app-dragdrop-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+mat-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

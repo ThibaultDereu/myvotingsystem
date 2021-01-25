@@ -1,0 +1,54 @@
+# backend
+myvotingsystem-backend/.classpath
+myvotingsystem-backend/.settings/
+myvotingsystem-backend/.project
+
+myvotingsystem-backend/src/main/resources/application-dev.properties
+myvotingsystem-backend/target
+
+
+# frontend
+# compiled output
+myvotingsystem-frontend/dist
+myvotingsystem-frontend/tmp
+myvotingsystem-frontend/out-tsc
+# Only exists if Bazel was run
+myvotingsystem-frontend/bazel-out
+
+# dependencies
+myvotingsystem-frontend/node_modules
+
+# profiling files
+myvotingsystem-frontend/chrome-profiler-events*.json
+myvotingsystem-frontend/speed-measure-plugin*.json
+
+# IDEs and editors
+myvotingsystem-frontend/.idea
+myvotingsystem-frontend/.project
+myvotingsystem-frontend/.classpath
+myvotingsystem-frontend/.c9/
+myvotingsystem-frontend/*.launch
+myvotingsystem-frontend/.settings/
+myvotingsystem-frontend/*.sublime-workspace
+
+# IDE - VSCode
+myvotingsystem-frontend/.vscode/*
+myvotingsystem-frontend/!.vscode/settings.json
+myvotingsystem-frontend/!.vscode/tasks.json
+myvotingsystem-frontend/!.vscode/launch.json
+myvotingsystem-frontend/!.vscode/extensions.json
+myvotingsystem-frontend/.history/*
+
+# misc
+myvotingsystem-frontend/.sass-cache
+myvotingsystem-frontend/connect.lock
+myvotingsystem-frontend/coverage
+myvotingsystem-frontend/libpeerconnection.log
+myvotingsystem-frontend/npm-debug.log
+myvotingsystem-frontend/yarn-error.log
+myvotingsystem-frontend/testem.log
+myvotingsystem-frontend/typings
+
+# System Files
+myvotingsystem-frontend/.DS_Store
+myvotingsystem-frontend/Thumbs.db

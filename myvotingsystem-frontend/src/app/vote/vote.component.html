@@ -1,0 +1,31 @@
+<h1 class="app-h1">Election : {{ election.name }}</h1>
+
+<p>Rank the candidates in order of preference, then confirm your choices.</p>
+
+<div cdkDropList class="app-dragdrop-list" (cdkDropListDropped)="drop($event)">
+  <div
+    class="app-dragdrop-box"
+    *ngFor="let candidate of this.election.candidates; let i = index"
+    cdkDrag
+  >
+    <span class="app-rank-number">{{ i + 1 }}</span>
+    <span>{{ candidate.name }}</span>
+  </div>
+</div>
+
+<button
+  class="app-form-button"
+  mat-stroked-button
+  color="accent"
+  (click)="submit()"
+>
+  Confirm
+</button>
+<button
+  class="app-form-button"
+  mat-stroked-button
+  color="primary"
+  (click)="goBack()"
+>
+  Cancel
+</button>

@@ -1,0 +1,45 @@
+.app-header-cell {
+  text-align: left;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #444;
+  font-weight: 500;
+}
+
+.app-cell,
+.app-header-cell {
+  padding: 5px 10px 5px 10px;
+  border-bottom: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  line-height: 1.6;
+}
+
+.winner-name {
+  color: rgb(17, 118, 250);
+  font-weight: 500;
+}
+
+.app-cell {
+  text-align: center;
+}
+
+.green-cell {
+  background-color: #90ff90;
+}
+
+.red-cell {
+  background-color: #f09292;
+}
+
+.yellow-cell {
+  background-color: rgb(250, 252, 153);
+}
+
+.app-table {
+  border-spacing: 0;
+  min-width: 50%;
+  width: auto;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,12 @@
+.app-rank-number {
+  margin-right: 50px;
+  border-radius: 100%;
+  background-color: white;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  color: #888;
+}

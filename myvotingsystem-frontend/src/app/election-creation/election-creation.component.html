@@ -1,0 +1,79 @@
+<h1 class="app-h1">Create an election</h1>
+
+<form class="app-form" [formGroup]="electionForm">
+  <mat-form-field class="app-form-field" appearance="outline">
+    <mat-label>Election name</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="name"
+      placeholder="Ex. What is your favorite movie ?"
+      required
+    />
+    <mat-error *ngIf="electionForm.controls.name.hasError('required')">
+      name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Choose a closing date</mat-label>
+    <input
+      matInput
+      formControlName="closingDate"
+      [matDatepicker]="picker"
+      [matDatepickerFilter]="filterBeforeToday"
+      required
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="electionForm.controls.closingDate.hasError('required')">
+      closing date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="app-form-field" appearance="outline">
+    <mat-label>Options</mat-label>
+    <mat-chip-list #chipList formArrayName="candidateNames">
+      <mat-chip
+        *ngFor="let candidate of candidateControls.value"
+        [selectable]="selectable"
+        (removed)="remove(candidate)"
+      >
+        {{ candidate }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="New option..."
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+    <mat-hint
+      *ngIf="
+        candidateControls.hasError('required') ||
+        candidateControls.hasError('minlength')
+      "
+      >Please provide at least {{ minCandidates }} options.</mat-hint
+    >
+  </mat-form-field>
+
+  <button
+    class="app-form-button"
+    mat-stroked-button
+    color="accent"
+    (click)="submit()"
+    [disabled]="this.electionForm.invalid"
+  >
+    Confirm
+  </button>
+  <button
+    class="app-form-button"
+    mat-stroked-button
+    color="primary"
+    (click)="goBack()"
+  >
+    Cancel
+  </button>
+</form>

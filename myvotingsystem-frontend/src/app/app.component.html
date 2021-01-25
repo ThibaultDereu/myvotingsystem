@@ -1,0 +1,14 @@
+<mat-toolbar class="app-navbar" color="primary">
+  <a mat-button routerLink="/">
+    <mat-icon>how_to_vote</mat-icon>
+    <span>Voting Application</span>
+  </a>
+
+  <button mat-icon-button (click)="openPresentationDialog()">
+    <mat-icon>help</mat-icon>
+  </button>
+</mat-toolbar>
+
+<main class="app-content">
+  <router-outlet></router-outlet>
+</main>

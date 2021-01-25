@@ -1,0 +1,86 @@
+<h1 class="app-h1">
+  Winner of the election : {{ this.voteResults?.electionName }}
+</h1>
+
+<!-- the winners -->
+<div>
+  <p *ngIf="this.voteResults?.winners.length == 0">
+    The results cannot be determined yet.
+  </p>
+
+  <p *ngIf="this.voteResults?.winners.length == 1">
+    The winner is :
+    <span class="winner-name">{{ this.voteResults.winners[0].name }}</span
+    >.
+  </p>
+
+  <div *ngIf="this.voteResults?.winners.length > 1">
+    <p>There are several winners :</p>
+    <ul>
+      <li class="winner-name" *ngFor="let winner of this.voteResults.winners">
+        {{ winner.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- number of voters -->
+<div>
+  <p>Number of votes : {{ this.voteResults?.nbVotes }}</p>
+</div>
+
+<div *ngIf="this.voteResults?.winners.length > 0">
+  <!-- Pairwise comparisons -->
+  <h1 class="app-h1">Pairwise Comparisons Matrix</h1>
+
+  <mat-button-toggle-group [(value)]="valueType">
+    <mat-button-toggle value="wins">Wins</mat-button-toggle>
+    <mat-button-toggle value="margins">Margins</mat-button-toggle>
+    <mat-button-toggle value="percentages">Percentages</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <table class="app-table mat-elevation-z8">
+    <thead>
+      <tr>
+        <th class="app-header-cell"></th>
+        <th
+          *ngFor="let cand of this.voteResults.candidates; let ind = index"
+          class="app-header-cell"
+          [class]="isWinner(cand) ? 'winner-name' : ''"
+        >
+          {{ ind + 1 }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let cand1 of this.voteResults.candidates; let ind1 = index">
+        <th
+          class="app-header-cell"
+          [class]="isWinner(cand1) ? 'winner-name' : ''"
+        >
+          {{ ind1 + 1 }}: {{ cand1.name }}
+        </th>
+        <td
+          *ngFor="let cand2 of this.voteResults.candidates"
+          class="app-cell"
+          [class]="getCellColor(cand1, cand2)"
+        >
+          {{ this.getCellValue(cand1, cand2) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- graph -->
+  <app-vote-graph [voteResults]="this.voteResults"></app-vote-graph>
+</div>
+
+<button
+  mat-stroked-button
+  class="app-form-button"
+  color="primary"
+  (click)="goBack()"
+>
+  Back
+</button>
