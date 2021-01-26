@@ -32,7 +32,7 @@ export class ElectionService {
   }
 
   getElection(id: number): Observable<ElectionFull> {
-    let url = `${this.electionUrl}/${id}`;
+    const url = `${this.electionUrl}/${id}`;
     return this.http.get<ElectionFull>(url);
   }
 
