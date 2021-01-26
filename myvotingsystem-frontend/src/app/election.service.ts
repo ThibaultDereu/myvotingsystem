@@ -4,8 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+import { environment } from './../environments/environment';
 import { Election } from './election';
-import { ElectionFull } from './election-full'
+import { ElectionFull } from './election-full';
 import { ElectionCreated } from './election-created';
 import { MessageService } from './message.service';
 
@@ -13,15 +14,18 @@ import { MessageService } from './message.service';
   providedIn: 'root',
 })
 export class ElectionService {
-
-  private electionUrl = 'api/elections';
+  private electionUrl = `${environment.apiUrl}/elections`;
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
   };
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
-
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {}
 
   getElections(): Observable<Election[]> {
     return this.http.get<Election[]>(this.electionUrl);
@@ -33,8 +37,9 @@ export class ElectionService {
   }
 
   createElection(election: ElectionCreated): Observable<ElectionCreated> {
-    return this.http.post<ElectionCreated>(this.electionUrl, election, this.httpOptions).pipe(
-      catchError(this.handleError<ElectionCreated>()));
+    return this.http
+      .post<ElectionCreated>(this.electionUrl, election, this.httpOptions)
+      .pipe(catchError(this.handleError<ElectionCreated>()));
   }
 
   private handleError<T>(result?: T) {

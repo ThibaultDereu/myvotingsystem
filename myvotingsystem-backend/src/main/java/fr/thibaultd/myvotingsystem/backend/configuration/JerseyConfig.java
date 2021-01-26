@@ -9,7 +9,10 @@ import fr.thibaultd.myvotingsystem.backend.api.VoteResource;
 public class JerseyConfig extends ResourceConfig {
 
   public JerseyConfig() {
-    // packages("fr.thibaultd.myvotingsystem.backend"); // doesn't work with fat jar
+    // packages("fr.thibaultd.myvotingsystem.backend.configuration"); // doesn't work with fat jar
+    register(RequestFilter.class);
+    register(CorsFilter.class);
+
     register(ElectionResource.class);
     register(VoteResource.class);
 

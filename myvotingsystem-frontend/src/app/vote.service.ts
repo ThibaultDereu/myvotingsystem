@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
+import { environment } from './../environments/environment';
 import { Candidate } from './candidate';
 import { VoteResults } from './vote-results';
 import { MessageService } from './message.service';
@@ -11,7 +12,7 @@ import { MessageService } from './message.service';
   providedIn: 'root',
 })
 export class VoteService {
-  private url = 'api/votes';
+  private url = `${environment.apiUrl}/votes`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
