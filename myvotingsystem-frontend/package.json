@@ -22,7 +22,6 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
-    "@swimlane/ngx-graph": "^7.2.0",
     "echarts": "^5.0.1",
     "express": "^4.17.1",
     "moment": "^2.29.1",

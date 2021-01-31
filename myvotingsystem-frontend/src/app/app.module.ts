@@ -36,6 +36,8 @@ import { VoteResultsComponent } from './vote-results/vote-results.component';
 import { VoteGraphComponent } from './vote-graph/vote-graph.component';
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
 
+import * as echarts from 'echarts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,9 +71,7 @@ import { ProjectDescriptionComponent } from './project-description/project-descr
     MatButtonToggleModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts'),
-    }),
+    NgxEchartsModule.forRoot({ echarts }),
   ],
   bootstrap: [AppComponent],
   providers: [
