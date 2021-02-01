@@ -29,10 +29,11 @@ export class AppComponent {
     private translateService: TranslateService,
     private dateAdapter: DateAdapter<Date>
   ) {
-    // TODO : register user preference in local storage
-    translateService.setDefaultLang('en');
-    translateService.use('en');
+    const locale: string = localStorage.getItem('locale') ?? 'en';
+    translateService.setDefaultLang(locale);
+    translateService.use(locale);
 
+    // register french locale
     registerLocaleData(localeFrench);
   }
 
@@ -49,5 +50,6 @@ export class AppComponent {
   setLanguage(code: string): void {
     this.translateService.use(code);
     this.dateAdapter.setLocale(code);
+    localStorage.setItem('locale', code);
   }
 }

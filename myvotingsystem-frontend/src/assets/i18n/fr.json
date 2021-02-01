@@ -5,6 +5,7 @@
   "BACK": "Retour",
 
   "ELECTION": {
+    "TITLE": "Élection",
     "CREATE": "Créer une election",
     "NAME": "nom",
     "CLOSING_DATE": "date de clôture",
