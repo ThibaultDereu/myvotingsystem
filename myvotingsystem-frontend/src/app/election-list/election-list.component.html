@@ -23,7 +23,7 @@
       {{ "ELECTION.CLOSING_DATE" | translate }}
     </th>
     <td mat-cell *matCellDef="let election">
-      {{ election.closingDate | date }}
+      {{ election.closingDate | localizedDate }}
     </td>
   </ng-container>
 

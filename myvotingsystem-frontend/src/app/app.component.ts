@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DateAdapter } from '@angular/material/core';
 import { TranslateService } from '@ngx-translate/core';
+import { registerLocaleData } from '@angular/common';
+import localeFrench from '@angular/common/locales/fr';
 
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
 
@@ -23,11 +26,14 @@ export class AppComponent {
 
   constructor(
     public dialog: MatDialog,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private dateAdapter: DateAdapter<Date>
   ) {
     // TODO : register user preference in local storage
     translateService.setDefaultLang('en');
     translateService.use('en');
+
+    registerLocaleData(localeFrench);
   }
 
   openPresentationDialog(): void {
@@ -42,5 +48,6 @@ export class AppComponent {
 
   setLanguage(code: string): void {
     this.translateService.use(code);
+    this.dateAdapter.setLocale(code);
   }
 }

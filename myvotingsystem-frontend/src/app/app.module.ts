@@ -41,6 +41,7 @@ import { VoteGraphComponent } from './vote-graph/vote-graph.component';
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
 
 import * as echarts from 'echarts';
+import { LocalizedDatePipe } from './localized-date.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import * as echarts from 'echarts';
     VoteResultsComponent,
     VoteGraphComponent,
     ProjectDescriptionComponent,
+    LocalizedDatePipe,
   ],
   imports: [
     BrowserModule,
