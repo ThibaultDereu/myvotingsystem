@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common';
 import localeFrench from '@angular/common/locales/fr';
 
-import { ProjectDescriptionComponent } from './project-description/project-description.component';
+import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 
 interface LanguageOption {
   code: string;

@@ -33,15 +33,15 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ElectionListComponent } from './election-list/election-list.component';
-import { ElectionCreationComponent } from './election-creation/election-creation.component';
-import { VoteComponent } from './vote/vote.component';
-import { VoteResultsComponent } from './vote-results/vote-results.component';
-import { VoteGraphComponent } from './vote-graph/vote-graph.component';
-import { ProjectDescriptionComponent } from './project-description/project-description.component';
+import { ElectionListComponent } from './components/election-list/election-list.component';
+import { ElectionCreationComponent } from './components/election-creation/election-creation.component';
+import { VoteComponent } from './components/vote/vote.component';
+import { VoteResultsComponent } from './components/vote-results/vote-results.component';
+import { VoteGraphComponent } from './components/vote-graph/vote-graph.component';
+import { ProjectDescriptionComponent } from './components/project-description/project-description.component';
 
 import * as echarts from 'echarts';
-import { LocalizedDatePipe } from './localized-date.pipe';
+import { LocalizedDatePipe } from './pipes/localized-date.pipe';
 
 @NgModule({
   declarations: [

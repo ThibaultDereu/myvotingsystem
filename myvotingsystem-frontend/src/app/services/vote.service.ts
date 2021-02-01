@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
-import { environment } from './../environments/environment';
-import { Candidate } from './candidate';
-import { VoteResults } from './vote-results';
+import { environment } from '../../environments/environment';
+import { Candidate } from '../models/candidate';
+import { VoteResults } from '../models/vote-results';
 import { MessageService } from './message.service';
 
 @Injectable({

@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { VoteResults } from '../vote-results';
-import { VoteService } from '../vote.service';
-import { Candidate } from '../candidate';
+import { VoteResults } from '../../models/vote-results';
+import { VoteService } from '../../services/vote.service';
+import { Candidate } from '../../models/candidate';
 
 @Component({
   selector: 'app-vote-results',

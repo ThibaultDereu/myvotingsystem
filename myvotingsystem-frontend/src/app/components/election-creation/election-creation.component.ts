@@ -4,8 +4,8 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Validators, FormBuilder, FormArray } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 
-import { ElectionService } from '../election.service';
-import { MessageService } from '../message.service';
+import { ElectionService } from '../../services/election.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-election-creation',

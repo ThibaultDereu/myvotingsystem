@@ -4,10 +4,10 @@ import { Location } from '@angular/common';
 
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
-import { ElectionFull } from '../election-full';
-import { ElectionService } from '../election.service';
-import { VoteService } from '../vote.service';
-import { MessageService } from '../message.service';
+import { ElectionFull } from '../../models/election-full';
+import { ElectionService } from '../../services/election.service';
+import { VoteService } from '../../services/vote.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-vote',

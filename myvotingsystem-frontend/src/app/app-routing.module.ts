@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ElectionListComponent } from './election-list/election-list.component';
-import { ElectionCreationComponent } from './election-creation/election-creation.component';
-import { VoteComponent } from './vote/vote.component';
-import { VoteResultsComponent } from './vote-results/vote-results.component';
+import { ElectionListComponent } from './components/election-list/election-list.component';
+import { ElectionCreationComponent } from './components/election-creation/election-creation.component';
+import { VoteComponent } from './components/vote/vote.component';
+import { VoteResultsComponent } from './components/vote-results/vote-results.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/elections', pathMatch: 'full' },

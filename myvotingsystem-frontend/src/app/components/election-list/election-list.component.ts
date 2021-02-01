@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ElectionService } from '../election.service';
-import { Election } from '../election';
+import { ElectionService } from '../../services/election.service';
+import { Election } from '../../models/election';
 
 @Component({
   selector: 'app-election-list',
@@ -19,11 +19,9 @@ export class ElectionListComponent implements OnInit {
 
   getElections(): void {
     this.loading = true;
-    this.electionService
-      .getElections()
-      .subscribe({
-        next: (elections) => (this.elections = elections),
-        complete: () => (this.loading = false),
-      });
+    this.electionService.getElections().subscribe({
+      next: (elections) => (this.elections = elections),
+      complete: () => (this.loading = false),
+    });
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { VoteResults } from '../vote-results';
-import { Candidate } from '../candidate';
+import { VoteResults } from '../../models/vote-results';
+import { Candidate } from '../../models/candidate';
 
 @Component({
   selector: 'app-vote-graph',
