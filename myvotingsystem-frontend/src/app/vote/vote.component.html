@@ -1,6 +1,6 @@
-<h1 class="app-h1">Election : {{ election.name }}</h1>
+<h1 class="app-h1">{{ "ELECTION.TITLE" | translate }} : {{ election.name }}</h1>
 
-<p>Rank the candidates in order of preference, then confirm your choices.</p>
+<p>{{ "VOTE.INSTRUCTION" | translate }}</p>
 
 <div cdkDropList class="app-dragdrop-list" (cdkDropListDropped)="drop($event)">
   <div
@@ -19,7 +19,7 @@
   color="accent"
   (click)="submit()"
 >
-  Confirm
+  {{ "CONFIRM" | translate }}
 </button>
 <button
   class="app-form-button"
@@ -27,5 +27,5 @@
   color="primary"
   (click)="goBack()"
 >
-  Cancel
+  {{ "CANCEL" | translate }}
 </button>

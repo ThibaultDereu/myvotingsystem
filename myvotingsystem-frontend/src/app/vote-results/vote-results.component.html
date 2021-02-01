@@ -1,21 +1,21 @@
 <h1 class="app-h1">
-  Winner of the election : {{ this.voteResults?.electionName }}
+  {{ "VOTE_RESULTS.WINNER" | translate }} : {{ this.voteResults?.electionName }}
 </h1>
 
 <!-- the winners -->
 <div>
   <p *ngIf="this.voteResults?.winners.length == 0">
-    The results cannot be determined yet.
+    {{ "VOTE_RESULTS.UNDEFINED" | translate }}
   </p>
 
   <p *ngIf="this.voteResults?.winners.length == 1">
-    The winner is :
+    {{ "VOTE_RESULTS.THE_WINNER_IS" | translate }} :
     <span class="winner-name">{{ this.voteResults.winners[0].name }}</span
     >.
   </p>
 
   <div *ngIf="this.voteResults?.winners.length > 1">
-    <p>There are several winners :</p>
+    <p>{{ "VOTE_RESULTS.MULTIPLE_WINNERS" | translate }} :</p>
     <ul>
       <li class="winner-name" *ngFor="let winner of this.voteResults.winners">
         {{ winner.name }}
@@ -26,17 +26,25 @@
 
 <!-- number of voters -->
 <div>
-  <p>Number of votes : {{ this.voteResults?.nbVotes }}</p>
+  <p>
+    {{ "VOTE_RESULTS.NB_VOTES" | translate }} : {{ this.voteResults?.nbVotes }}
+  </p>
 </div>
 
 <div *ngIf="this.voteResults?.winners.length > 0">
   <!-- Pairwise comparisons -->
-  <h1 class="app-h1">Pairwise Comparisons Matrix</h1>
+  <h1 class="app-h1">{{ "VOTE_RESULTS.COMPARISONS_MATRIX" | translate }}</h1>
 
   <mat-button-toggle-group [(value)]="valueType">
-    <mat-button-toggle value="wins">Wins</mat-button-toggle>
-    <mat-button-toggle value="margins">Margins</mat-button-toggle>
-    <mat-button-toggle value="percentages">Percentages</mat-button-toggle>
+    <mat-button-toggle value="wins">{{
+      "VOTE_RESULTS.WINS" | translate
+    }}</mat-button-toggle>
+    <mat-button-toggle value="margins">{{
+      "VOTE_RESULTS.MARGINS" | translate
+    }}</mat-button-toggle>
+    <mat-button-toggle value="percentages">{{
+      "VOTE_RESULTS.PERCENTAGES" | translate
+    }}</mat-button-toggle>
   </mat-button-toggle-group>
 
   <table class="app-table mat-elevation-z8">
@@ -82,5 +90,5 @@
   color="primary"
   (click)="goBack()"
 >
-  Back
+  {{ "BACK" | translate }}
 </button>

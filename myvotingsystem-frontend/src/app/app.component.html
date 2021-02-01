@@ -1,12 +1,31 @@
 <mat-toolbar class="app-navbar" color="primary">
-  <a mat-button routerLink="/">
-    <mat-icon>how_to_vote</mat-icon>
-    <span>Voting Application</span>
-  </a>
+  <div>
+    <a mat-button routerLink="/">
+      <mat-icon>how_to_vote</mat-icon>
+      <span>Voting Application</span>
+    </a>
 
-  <button mat-icon-button (click)="openPresentationDialog()">
-    <mat-icon>help</mat-icon>
-  </button>
+    <button mat-icon-button (click)="openPresentationDialog()">
+      <mat-icon>help</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menuLang">
+      <mat-icon>translate</mat-icon>
+    </button>
+    <mat-menu #menuLang="matMenu">
+      <button
+        mat-menu-item
+        *ngFor="let lang of languages"
+        (click)="setLanguage(lang.code)"
+      >
+        <span [class.mat-body-strong]="isCurrentLanguage(lang.code)">
+          {{ lang.caption }}</span
+        >
+      </button>
+    </mat-menu>
+  </div>
 </mat-toolbar>
 
 <main class="app-content">

@@ -1,22 +1,22 @@
-<h1 class="app-h1">Create an election</h1>
+<h1 class="app-h1">{{ "ELECTION.CREATE" | translate }}</h1>
 
 <form class="app-form" [formGroup]="electionForm">
   <mat-form-field class="app-form-field" appearance="outline">
-    <mat-label>Election name</mat-label>
+    <mat-label>{{ "ELECTION.INPUT.NAME" | translate }}</mat-label>
     <input
       type="text"
       matInput
       formControlName="name"
-      placeholder="Ex. What is your favorite movie ?"
+      [placeholder]="'ELECTION.INPUT.NAME_EXAMPLE' | translate"
       required
     />
     <mat-error *ngIf="electionForm.controls.name.hasError('required')">
-      name is <strong>required</strong>
+      {{ "ELECTION.INPUT.NAME" | translate }} {{ "IS_REQUIRED" | translate }}
     </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Choose a closing date</mat-label>
+    <mat-label>{{ "ELECTION.INPUT.CLOSING_DATE_LABEL" | translate }}</mat-label>
     <input
       matInput
       formControlName="closingDate"
@@ -27,12 +27,12 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <mat-error *ngIf="electionForm.controls.closingDate.hasError('required')">
-      closing date is <strong>required</strong>
+      {{ "ELECTION.CLOSING_DATE" | translate }} {{ "IS_REQUIRED" | translate }}
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="app-form-field" appearance="outline">
-    <mat-label>Options</mat-label>
+    <mat-label>{{ "ELECTION.INPUT.CANDIDATES_OPTIONS" | translate }}</mat-label>
     <mat-chip-list #chipList formArrayName="candidateNames">
       <mat-chip
         *ngFor="let candidate of candidateControls.value"
@@ -55,7 +55,10 @@
         candidateControls.hasError('required') ||
         candidateControls.hasError('minlength')
       "
-      >Please provide at least {{ minCandidates }} options.</mat-hint
+      >{{
+        "ELECTION.INPUT.CANDIDATES_HINT"
+          | translate: { minOptions: minCandidates }
+      }}</mat-hint
     >
   </mat-form-field>
 
@@ -66,7 +69,7 @@
     (click)="submit()"
     [disabled]="this.electionForm.invalid"
   >
-    Confirm
+    {{ "CONFIRM" | translate }}
   </button>
   <button
     class="app-form-button"
@@ -74,6 +77,6 @@
     color="primary"
     (click)="goBack()"
   >
-    Cancel
+    {{ "CANCEL" | translate }}
   </button>
 </form>

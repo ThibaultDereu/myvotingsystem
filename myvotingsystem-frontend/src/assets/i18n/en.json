@@ -1,0 +1,50 @@
+{
+  "IS_REQUIRED": " is required",
+  "CONFIRM": "Confirm",
+  "CANCEL": "Cancel",
+  "BACK": "Back",
+
+  "ELECTION": {
+    "TITLE": "Election",
+    "CREATE": "Create an election",
+    "NAME": "name",
+    "CLOSING_DATE": "closing date",
+    "NB_VOTES": "Nb votes",
+    "STATUS": "Status",
+
+    "INPUT": {
+      "NAME": "Election name",
+      "NAME_EXAMPLE": "Ex. What is your favorite movie ?",
+      "CLOSING_DATE_LABEL": "Choose a closing date",
+      "CANDIDATES_OPTIONS": "options",
+      "CANDIDATES_HINT": "Please provide at least {{ minOptions }} options."
+    }
+  },
+
+  "VOTE": {
+    "INSTRUCTION": "Rank the candidates in order of preference, then confirm your choices."
+  },
+
+  "VOTE_RESULTS": {
+    "WINNER": "Winner of the election",
+    "UNDEFINED": "The results cannot be determined yet.",
+    "THE_WINNER_IS": "The winnner is ",
+    "MULTIPLE_WINNERS": "There are several winners",
+    "NB_VOTES": "Number of votes",
+    "COMPARISONS_MATRIX": "Pairwise Comparisons Matrix",
+    "WINS": "Wins",
+    "MARGINS": "Margins",
+    "PERCENTAGES": "Percentages",
+    "VOTE_GRAPH_TITLE": "Pairwise Preference Graph"
+  },
+
+  "PROJECT_DESCRIPTION": {
+    "TITLE": "Voting Application",
+    "PARAGRAPH1": "This application lets you organize elections, vote, and consult their results. The voters must rank all the candidates by order of preference.",
+    "PARAGRAPH2": "To calculate the winner of the election, the voting system used is the Schulze method. This method garantees to elect the Condorcet winner : the candidate that wins a majority of the vote in every head-to-head election against each of the other candidates, that is, a candidate preferred by more voters than any others, whenever there is such a candidate.",
+    "PARAGRAPH3": "If there is no Condorcet winner, the Schulze method will elect the best candidate from the top candidates. Several heuristics were invented to achieve this. Here we use the Schwartz method. It is still possible to end up with a tie, if the number of voters is low.",
+    "PARAGRAPH4": "For more details:",
+    "WIKI_URL": "https://en.wikipedia.org/wiki/Schulze_method",
+    "WIKI_TEXT": "Wikipedia page on the Schulze method"
+  }
+}

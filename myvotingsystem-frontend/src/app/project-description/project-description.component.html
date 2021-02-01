@@ -1,29 +1,15 @@
-<h1 mat-dialog-title>Voting Application</h1>
+<h1 mat-dialog-title>{{ "PROJECT_DESCRIPTION.TITLE" | translate }}</h1>
 <div mat-dialog-content>
+  <p>{{ "PROJECT_DESCRIPTION.PARAGRAPH1" | translate }}</p>
+  <p>{{ "PROJECT_DESCRIPTION.PARAGRAPH2" | translate }}</p>
+  <p>{{ "PROJECT_DESCRIPTION.PARAGRAPH3" | translate }}</p>
   <p>
-    This application lets you organize elections, vote, and consult their
-    results. The voters must rank all the candidates by order of preference.
-  </p>
-  <p>
-    To calculate the winner of the election, the voting system used is the
-    Schulze method. This method garantees to elect the Condorcet winner : the
-    candidate that wins a majority of the vote in every head-to-head election
-    against each of the other candidates, that is, a candidate preferred by more
-    voters than any others, whenever there is such a candidate.
-  </p>
-  <p>
-    If there is no Condorcet winner, the Schulze method will elect the best
-    candidate from the top candidates. Several heuristics were invented to
-    achieve this. Here we use the Schwartz method. It is still possible to end
-    up with a tie, if the number of voters is low.
-  </p>
-  <p>
-    For more details:
+    {{ "PROJECT_DESCRIPTION.PARAGRAPH4" | translate }}
     <a
-      href="https://en.wikipedia.org/wiki/Schulze_method"
+      [href]="'PROJECT_DESCRIPTION.WIKI_URL' | translate"
       target="_blank"
       rel="noopener noreferrer"
-      >Wikipedia page on the Schulze method</a
+      >{{ "PROJECT_DESCRIPTION.WIKI_TEXT" | translate }}</a
     >
   </p>
 </div>
@@ -31,3 +17,29 @@
 <div mat-dialog-actions>
   <button mat-button (click)="onCloseButton()">close</button>
 </div>
+
+<!-- <p>  This application lets you organize elections, vote, and consult their
+  results. The voters must rank all the candidates by order of preference.
+</p>
+<p>
+  To calculate the winner of the election, the voting system used is the
+  Schulze method. This method garantees to elect the Condorcet winner : the
+  candidate that wins a majority of the vote in every head-to-head election
+  against each of the other candidates, that is, a candidate preferred by more
+  voters than any others, whenever there is such a candidate.
+</p>
+<p>
+  If there is no Condorcet winner, the Schulze method will elect the best
+  candidate from the top candidates. Several heuristics were invented to
+  achieve this. Here we use the Schwartz method. It is still possible to end
+  up with a tie, if the number of voters is low.
+</p>
+<p>
+  For more details:
+  <a
+    href='https://en.wikipedia.org/wiki/Schulze_method'
+    target='_blank'
+    rel='noopener noreferrer'
+    >Wikipedia page on the Schulze method</a
+  >
+</p> -->

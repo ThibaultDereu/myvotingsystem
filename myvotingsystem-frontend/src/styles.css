@@ -25,6 +25,7 @@ body {
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
 }
 
 .app-navbar * {
@@ -66,12 +67,12 @@ ul {
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   font-weight: 200;
-  color: #666;
+  color: #444;
 }
 
 .app-h2 {
   font-weight: 200;
-  color: #666;
+  color: #444;
 }
 
 .app-dragdrop-list {

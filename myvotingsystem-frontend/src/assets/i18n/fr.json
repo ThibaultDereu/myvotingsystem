@@ -1,0 +1,49 @@
+{
+  "IS_REQUIRED": " est obligatoire",
+  "CONFIRM": "Confirmer",
+  "CANCEL": "Annuler",
+  "BACK": "Retour",
+
+  "ELECTION": {
+    "CREATE": "Créer une election",
+    "NAME": "nom",
+    "CLOSING_DATE": "date de clôture",
+    "NB_VOTES": "Nb votes",
+    "STATUS": "Statut",
+
+    "INPUT": {
+      "NAME": "Nom de l'élection",
+      "NAME_EXAMPLE": "Ex. Quel est votre film préféré ?",
+      "CLOSING_DATE_LABEL": "Sélectionner une date de clôture",
+      "CANDIDATES_OPTIONS": "options",
+      "CANDIDATES_HINT": "Veuillez renseigner au moins {{ minOptions }} options."
+    }
+  },
+
+  "VOTE": {
+    "INSTRUCTION": "Classez les candidates par ordre de préférences, puis confirmer votre choix."
+  },
+
+  "VOTE_RESULTS": {
+    "WINNER": "Gagnant de l'élection",
+    "UNDEFINED": "Les résultats ne peuvent pas encore être déterminés.",
+    "THE_WINNER_IS": "Le gagnant est ",
+    "MULTIPLE_WINNERS": "Il y a plusieurs gagnants",
+    "NB_VOTES": "Nombre de votes",
+    "COMPARISONS_MATRIX": "Matrice de comparaisons",
+    "WINS": "Victoires",
+    "MARGINS": "Marges",
+    "PERCENTAGES": "Pourcentages",
+    "VOTE_GRAPH_TITLE": "Graphe des préférences"
+  },
+
+  "PROJECT_DESCRIPTION": {
+    "TITLE": "Application de vote",
+    "PARAGRAPH1": "Cette application permet d'organiser des élections, de voter, et de consulter les résultats. Les votants doivent classer tous les candidats selon leurs préférences.",
+    "PARAGRAPH2": "Pour calculer le gagnant d'une élection, le système de vote utilisé s'appelle la méthode de Schulze. Cette méthode garantit d'élir de vainqueur de Condorcet : il s'agit du candidat qui gagne la majorité des votes en duel contre tout autre candidat.",
+    "PARAGRAPH3": "S'il n'y a pas de vainqueur de Condorcet, la méthode de Schulze élira le meilleur candidat parmi le groupe de tête. Plusieurs heurisitiques ont été mises au point pour parvenir à ce résultat. Ici, nous utilisons la méthode de l'ensembles de Schwartz. Il reste possible d'aboutir à plusieurs gagnants à égalité, lorsque le nombre de votants est faible.",
+    "PARAGRAPH4": "Pour plus de détails:",
+    "WIKI_URL": "https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Schulze",
+    "WIKI_TEXT": "Page wikipedia sur la méthode de Schulze"
+  }
+}

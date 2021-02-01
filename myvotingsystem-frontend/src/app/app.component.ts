@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
+
+interface LanguageOption {
+  code: string;
+  caption: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -10,12 +16,31 @@ import { ProjectDescriptionComponent } from './project-description/project-descr
 })
 export class AppComponent {
   title = 'voting system';
+  languages: LanguageOption[] = [
+    { code: 'en', caption: 'English' },
+    { code: 'fr', caption: 'Français' },
+  ];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private translateService: TranslateService
+  ) {
+    // TODO : register user preference in local storage
+    translateService.setDefaultLang('en');
+    translateService.use('en');
+  }
 
   openPresentationDialog(): void {
     this.dialog.open(ProjectDescriptionComponent, {
       width: '600px',
     });
+  }
+
+  isCurrentLanguage(code: string): boolean {
+    return this.translateService.currentLang === code;
+  }
+
+  setLanguage(code: string): void {
+    this.translateService.use(code);
   }
 }
