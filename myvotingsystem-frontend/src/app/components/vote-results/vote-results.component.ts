@@ -14,6 +14,7 @@ import { Candidate } from '../../models/candidate';
 export class VoteResultsComponent implements OnInit {
   voteResults: VoteResults;
   valueType = 'wins';
+  selectedCandidates = [];
 
   constructor(
     private voteService: VoteService,
@@ -72,6 +73,22 @@ export class VoteResultsComponent implements OnInit {
     } else {
       return score1.toString();
     }
+  }
+
+  select(cell1: Candidate, cell2: Candidate): void {
+    this.selectedCandidates = [cell1, cell2];
+  }
+
+  unselect(): void {
+    this.selectedCandidates = [];
+  }
+
+  isSelected(cell1: Candidate, cell2: Candidate): boolean {
+    return (
+      this.selectedCandidates.includes(cell1) &&
+      this.selectedCandidates.includes(cell2) &&
+      cell1 !== cell2
+    );
   }
 
   goBack(): void {

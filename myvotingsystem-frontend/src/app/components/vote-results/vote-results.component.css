@@ -34,7 +34,7 @@
 }
 
 .yellow-cell {
-  background-color: rgb(250, 252, 153);
+  background-color: rgba(250, 252, 153);
 }
 
 .app-table {
@@ -42,4 +42,9 @@
   min-width: 50%;
   width: auto;
   margin-bottom: 30px;
+}
+
+.app-selected {
+  box-shadow: inset 3px 3px 6px 1px rgba(0, 0, 0, 0.4);
+  transition: all 0.1s ease-in-out;
 }

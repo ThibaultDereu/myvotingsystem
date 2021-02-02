@@ -73,6 +73,9 @@
           *ngFor="let cand2 of this.voteResults.candidates"
           class="app-cell"
           [class]="getCellColor(cand1, cand2)"
+          [class.app-selected]="isSelected(cand1, cand2)"
+          (mouseover)="select(cand1, cand2)"
+          (mouseleave)="unselect()"
         >
           {{ this.getCellValue(cand1, cand2) }}
         </td>
